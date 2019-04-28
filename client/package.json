@@ -1,0 +1,56 @@
+{
+  "homepage": "http://decentralMind.github.io/signthedoc",
+  "name": "sign-the-doc",
+  "version": "1.0.0",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && cp build/index.html build/404.html",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "description": "",
+  "dependencies": {
+    "date-fns": "^2.0.0-alpha.23",
+    "js-sha3": "^0.8.0",
+    "moment": "^2.24.0",
+    "react": "^16.6.3",
+    "react-datepicker": "^2.1.0",
+    "react-dom": "^16.6.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^2.1.5",
+    "truffle-hdwallet-provider": "^1.0.8",
+    "web3": "^1.0.0-beta.46"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-bn": "^0.1.1",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "gh-pages": "^2.0.1",
+    "react-test-renderer": "^16.8.2",
+    "semver": "^5.6.0"
+  },
+  "private": true,
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

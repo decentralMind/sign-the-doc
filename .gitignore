@@ -1,0 +1,9 @@
+.vscode/
+node_modules/
+client/build/
+client/node_modules/
+client/contracts/
+client/package-lock.json
+.DS_Store
+*.tgz
+.npm/

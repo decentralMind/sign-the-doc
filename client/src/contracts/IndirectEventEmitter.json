@@ -1,0 +1,444 @@
+{
+  "contractName": "IndirectEventEmitter",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "string"
+        }
+      ],
+      "name": "IndirectString",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ],
+      "name": "emitStringIndirectly",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506101d9806100206000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806384f390fa14610046575b600080fd5b34801561005257600080fd5b5061010c6004803603602081101561006957600080fd5b810190808035906020019064010000000081111561008657600080fd5b82018360208201111561009857600080fd5b803590602001918460018302840111640100000000831117156100ba57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061010e565b005b7ff58431b083f570a2ac1a2ef2f04cfc1853f71c6c0794807e35d5cdb99834b0ca816040518080602001828103825283818151815260200191508051906020019080838360005b83811015610170578082015181840152602081019050610155565b50505050905090810190601f16801561019d5780820380516001836020036101000a031916815260200191505b509250505060405180910390a15056fea165627a7a72305820864790ab8e25b735217b01e866487e867de4823c41389ac23d388b605de061970029",
+  "deployedBytecode": "0x608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806384f390fa14610046575b600080fd5b34801561005257600080fd5b5061010c6004803603602081101561006957600080fd5b810190808035906020019064010000000081111561008657600080fd5b82018360208201111561009857600080fd5b803590602001918460018302840111640100000000831117156100ba57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061010e565b005b7ff58431b083f570a2ac1a2ef2f04cfc1853f71c6c0794807e35d5cdb99834b0ca816040518080602001828103825283818151815260200191508051906020019080838360005b83811015610170578082015181840152602081019050610155565b50505050905090810190601f16801561019d5780820380516001836020036101000a031916815260200191505b509250505060405180910390a15056fea165627a7a72305820864790ab8e25b735217b01e866487e867de4823c41389ac23d388b605de061970029",
+  "sourceMap": "25:180:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:180:4;;;;;;;",
+  "deployedSourceMap": "25:180:4:-;;;;;;;;;;;;;;;;;;;;;;;;102:101;;8:9:-1;5:2;;;30:1;27;20:12;5:2;102:101:4;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;102:101:4;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;102:101:4;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;102:101:4;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;102:101:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;102:101:4;;;;;;;;;;;;;;;;;;;175:21;190:5;175:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;175:21:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;102:101;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract IndirectEventEmitter {\n    event IndirectString(string value);\n\n    function emitStringIndirectly(string memory value) public {\n        emit IndirectString(value);\n    }\n}\n",
+  "sourcePath": "/home/rav/mainProj/sign-the-doc/contracts/mocks/IndirectEventEmitter.sol",
+  "ast": {
+    "absolutePath": "/home/rav/mainProj/sign-the-doc/contracts/mocks/IndirectEventEmitter.sol",
+    "exportedSymbols": {
+      "IndirectEventEmitter": [
+        923
+      ]
+    },
+    "id": 924,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 908,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 923,
+        "linearizedBaseContracts": [
+          923
+        ],
+        "name": "IndirectEventEmitter",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 912,
+            "name": "IndirectString",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 911,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 910,
+                  "indexed": false,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 912,
+                  "src": "82:12:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 909,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "82:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "81:14:4"
+            },
+            "src": "61:35:4"
+          },
+          {
+            "body": {
+              "id": 921,
+              "nodeType": "Block",
+              "src": "160:43:4",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 918,
+                        "name": "value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 914,
+                        "src": "190:5:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 917,
+                      "name": "IndirectString",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 912,
+                      "src": "175:14:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 919,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "175:21:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 920,
+                  "nodeType": "EmitStatement",
+                  "src": "170:26:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 922,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "emitStringIndirectly",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 915,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 914,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 922,
+                  "src": "132:19:4",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 913,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "132:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "131:21:4"
+            },
+            "returnParameters": {
+              "id": 916,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "160:0:4"
+            },
+            "scope": 923,
+            "src": "102:101:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 924,
+        "src": "25:180:4"
+      }
+    ],
+    "src": "0:206:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/rav/mainProj/sign-the-doc/contracts/mocks/IndirectEventEmitter.sol",
+    "exportedSymbols": {
+      "IndirectEventEmitter": [
+        923
+      ]
+    },
+    "id": 924,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 908,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 923,
+        "linearizedBaseContracts": [
+          923
+        ],
+        "name": "IndirectEventEmitter",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 912,
+            "name": "IndirectString",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 911,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 910,
+                  "indexed": false,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 912,
+                  "src": "82:12:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 909,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "82:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "81:14:4"
+            },
+            "src": "61:35:4"
+          },
+          {
+            "body": {
+              "id": 921,
+              "nodeType": "Block",
+              "src": "160:43:4",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 918,
+                        "name": "value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 914,
+                        "src": "190:5:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 917,
+                      "name": "IndirectString",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 912,
+                      "src": "175:14:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 919,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "175:21:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 920,
+                  "nodeType": "EmitStatement",
+                  "src": "170:26:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 922,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "emitStringIndirectly",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 915,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 914,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 922,
+                  "src": "132:19:4",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 913,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "132:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "131:21:4"
+            },
+            "returnParameters": {
+              "id": 916,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "160:0:4"
+            },
+            "scope": 923,
+            "src": "102:101:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 924,
+        "src": "25:180:4"
+      }
+    ],
+    "src": "0:206:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-04-26T07:36:50.170Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
