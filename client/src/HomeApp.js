@@ -29,7 +29,7 @@ function Home() {
             <br />
             <div>
                 <h4>Contract deployed at:</h4>
-                <p>Rinkeby:<a href="https://ropsten.etherscan.io/address/0xf82438a3ba0764ce51b58c484f644905da177b1c" target="_blank" rel="noopener noreferrer">0xf82438a3ba0764ce51b58c484f644905da177b1c</a></p>
+                <p>Rinkeby:<a href="https://rinkeby.etherscan.io/address/0x703e8cf12b10911168178c0aabd64cb882854e03" target="_blank" rel="noopener noreferrer">0x703e8Cf12b10911168178C0AABD64cB882854e03</a></p>
                 <p>Ropsten:<a href="https://ropsten.etherscan.io/address/0x1CB4E004b2a81045097416C0c6CF42aA0C608e4a" target="_blank" rel="noopener noreferrer"> 0x1CB4E004b2a81045097416C0c6CF42aA0C608e4a</a></p>
                 <p>Kovan:<a href="https://kovan.etherscan.io/address/0xeba2cef3320c34e7873afa6905e17add8011910f" target="_blank" rel="noopener noreferrer">0x4df4c113f15ad7d20642a4cba34071fb3c55c581</a></p>
             </div>
@@ -49,13 +49,21 @@ const Page404 = ({ location }) => (
     </div>
 );
 
-/*
-<Router basename={process.env.PUBLIC_URL}>
-"build": "react-scripts build && cp build/index.html build/404.html",
-*/
 
 const HomeApp = () => {
     return (
+        
+        /*
+        Router setup for github deployment.
+
+        <Router basename={process.env.PUBLIC_URL}>
+
+        Change build script at package.json for github deployment.
+
+        "build": "react-scripts build && cp build/index.html build/404.html",
+        */
+
+        //Process.env.PUBLIC_URL is used for github deployment.
         <Router basename={process.env.PUBLIC_URL}>
             <MainProvider>
                 <SignInfoProvider>

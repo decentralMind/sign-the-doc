@@ -2,16 +2,16 @@ require('dotenv').config()
 const path = require("path");
 var HDWalletProvider = require("truffle-hdwallet-provider");
 
-var mnemonic = "This should be same 12 word seed used on Metamask.";
+var mnemonic = process.env.SEED12;
 
 // Infura ropsten end point.
-var ropstenEndPoint = 'https://' + 'change this with your rinkeby end point received from Infura';
+var ropstenEndPoint = 'https://' + process.env.ROPSTEN;
 
-// //Infura rinkeby end point.
-// var rinkebyEndPoint =  'https://' + 'change this with your rinkeby end point received from Infura';
+//Infura rinkeby end point.
+// var rinkebyEndPoint =  'https://' + process.env.RINKEBY;
 
 // // Infura kovan end point.
-// var kovanEndPoint = 'https://' + 'change this with your kovan end point received from Infura';
+// var kovanEndPoint = 'https://' + process.env.KOVAN;
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
