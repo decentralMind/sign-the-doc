@@ -2,7 +2,7 @@ import SignTheDoc from "../contracts/SignTheDoc.json";
 import getWeb3 from "../utils/getWeb3";
 import { networkCheck, wrongNetMsg } from '../utils/helper';
 
-export const loadWeb3 = async (updateLoadWeb3, liveProd = false) => {
+export const loadWeb3 = async (updateLoadWeb3, liveProd = true) => {
     try {
         const web3 = await getWeb3();
 

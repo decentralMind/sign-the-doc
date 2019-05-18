@@ -1,7 +1,7 @@
 pragma solidity ^ 0.5.0;
 
 contract SignTheDoc {
-
+  
   struct Creator {
     address creatorAddress;
     uint256 creationDate;
@@ -108,7 +108,13 @@ contract SignTheDoc {
     recordInitialDoc(expiryDate, signature, authorisedSignerList, docHash);
   }
 
-  function recordInitialDoc(uint256 expiryDate, bytes memory signature, address[] memory authorisedSignerList, bytes32 docHash)  public {
+  function recordInitialDoc(
+    uint256 expiryDate,
+    bytes memory signature, 
+    address[] memory authorisedSignerList, 
+    bytes32 docHash
+    ) 
+    internal {
     Creator storage creator = docData[docHash];
 
     creator.creatorAddress = msg.sender;

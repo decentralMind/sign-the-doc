@@ -116,7 +116,7 @@ class FileToHash extends React.Component {
       showProgress = (
         <div>
           <p>Progress: {this.state.progress}</p>
-          <p><strong>Hash generated: {hashOutput}></strong></p>
+          <p><strong>Hash generated: {hashOutput}</strong></p>
           {proceedMsg('Step2')}
           <NextButton toUpdate="hashFile" />
         </div>

@@ -36,7 +36,7 @@ function Home() {
 
             <br />
             <p>Creator: decentralMind@gmail.com</p>
-            <a href="https://github.com/decentralMind/sign-the-doc" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/decentralMind/sign-the-doc/" target="_blank" rel="noopener noreferrer">
                 <img src={githubLogo} alt="github logo"/>
             </a>
         </div>
