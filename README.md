@@ -6,7 +6,7 @@ Project live at: https://decentralMind.github.io/signthedoc
 
 **Contract Deployment address:-**
 
-* Rinkeby: [0xf82438a3ba0764ce51b58c484f644905da177b1c](https://ropsten.etherscan.io/address/0xf82438a3ba0764ce51b58c484f644905da177b1c)
+* Rinkeby: [0x703e8cf12b10911168178c0aabd64cb882854e03](https://rinkeby.etherscan.io/address/0x703e8cf12b10911168178c0aabd64cb882854e03)
 
 * Ropsten: [0x1CB4E004b2a81045097416C0c6CF42aA0C608e4a](https://ropsten.etherscan.io/address/0x1CB4E004b2a81045097416C0c6CF42aA0C608e4a)
 
