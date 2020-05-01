@@ -6,8 +6,8 @@ describe('test ganache custom RPC', function () {
 		startingBlock = await web3.eth.getBlockNumber();
 		ganache_evm_mine();
 		newBlock = await web3.eth.getBlockNumber();
-		newBlock.should.be.equal(startingBlock + 1);	
-    });	
+		newBlock.should.be.equal(startingBlock + 1);
+    });
 
    	it('increases time to a time in the future', async function(){
    		const toleranceSecond = 1;
