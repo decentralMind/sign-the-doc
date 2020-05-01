@@ -1,7 +1,11 @@
 pragma solidity ^ 0.5.0;
 
+/**
+
+
+
+*/
 contract SignTheDoc {
-  
   struct Creator {
     address creatorAddress;
     uint256 creationDate;
@@ -60,7 +64,7 @@ contract SignTheDoc {
 
   function multipleValidations(address creator, bytes32 signerDocHash) public view returns(bool){
     Creator memory doc = docData[signerDocHash];
-    
+
     require(
       signerDocHash == doc.docHash,
       'Failed to verify document hash.'
@@ -77,7 +81,7 @@ contract SignTheDoc {
     );
 
    require(
-     !(docData[signerDocHash].signedOrNot[msg.sender]), 
+     !(docData[signerDocHash].signedOrNot[msg.sender]),
       'Already signed by this account.Multiple signing is not allowed.'
    );
 
@@ -87,7 +91,7 @@ contract SignTheDoc {
         'Provided address not authorised to sign the document.'
       );
     }
-    
+
     return true;
   }
 
@@ -110,10 +114,10 @@ contract SignTheDoc {
 
   function recordInitialDoc(
     uint256 expiryDate,
-    bytes memory signature, 
-    address[] memory authorisedSignerList, 
+    bytes memory signature,
+    address[] memory authorisedSignerList,
     bytes32 docHash
-    ) 
+    )
     internal {
     Creator storage creator = docData[docHash];
 
@@ -166,7 +170,7 @@ contract SignTheDoc {
     doc.signedOrNot[msg.sender] = true;
     return true;
   }
-  
+
   function isSigned(bytes32 docHash, address signer) public view returns (bool signed) {
       return docData[docHash].signedOrNot[signer];
   }
