@@ -250,7 +250,7 @@ contract SignTheDoc {
   * document save as hash format `signerDocHash`.
   */
   function getSignerInfo(bytes32 signerDocHash, address signer)
-  public
+  external
   view
   returns (
     address signerAddress,
