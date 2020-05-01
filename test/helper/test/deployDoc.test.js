@@ -1,6 +1,6 @@
 const { BN, should } = require('../setup');
 const deployDoc = require('../deployDoc');
-const getSignData = require('../getSignData')
+const getSignData = require('../getSignData');
 const { latest, duration } = require('../time');
 
 describe('deployDoc', function() {
@@ -17,7 +17,7 @@ describe('deployDoc', function() {
   describe('Without requesting to modify variables', function() {
     beforeEach(function() {
       this.depData = deployDoc(null, null, this.expiryDate, this.signData,
-        [this.accounts[1], this.accounts[2]])
+        [this.accounts[1], this.accounts[2]]);
     });
 
     it('returns correct data', function() {
@@ -35,17 +35,17 @@ describe('deployDoc', function() {
     beforeEach(function() {
       this.testMsg = 'decentralize world';
       this.testHash = web3.utils.sha3(this.testMsg);
-    })
+    });
     //----start tag requesting to modify ---->
     context('modify expiryDate', function() {
       beforeEach(function() {
-        this.expiryDate = new BN(123456789)
+        this.expiryDate = new BN(123456789);
         this.depData = deployDoc('expiryDate', 123456789, this.expiryDate, this.signData,
-          [this.accounts[1], this.accounts[2]])
+          [this.accounts[1], this.accounts[2]]);
       });
 
       it('returns correct modified expiryDate', function() {
-        (this.depData.expiryDate).should.be.bignumber.equal(this.expiryDate)
+        (this.depData.expiryDate).should.be.bignumber.equal(this.expiryDate);
       });
 
       it('returns all other data unmodified', function() {
@@ -61,11 +61,11 @@ describe('deployDoc', function() {
     context('modify docHash', function() {
       beforeEach(function() {
         this.depData = deployDoc('docHash', this.testHash, this.expiryDate, this.signData,
-          [this.accounts[1], this.accounts[2]])
+          [this.accounts[1], this.accounts[2]]);
       });
 
       it('returns correct modified docHash', function() {
-        (this.depData.docHash).should.be.equal(this.testHash)
+        (this.depData.docHash).should.be.equal(this.testHash);
       });
 
       it('returns all other data unmodified', function() {

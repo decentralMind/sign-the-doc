@@ -1,4 +1,4 @@
-const { should } = require('./setup')
+const { should } = require('./setup');
 const shouldFail = require('./shouldFail');
 
 async function customThrow(msg) {

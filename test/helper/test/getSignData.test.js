@@ -1,6 +1,6 @@
 const Signature = artifacts.require('Signature');
 const { BN, should } = require('../setup');
-const getSignData = require('../getSignData')
+const getSignData = require('../getSignData');
 
 contract('Signature', function([accOne, accTwo]) {
   beforeEach(async function() {

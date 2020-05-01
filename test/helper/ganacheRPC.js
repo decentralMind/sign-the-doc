@@ -19,11 +19,3 @@ module.exports = {
   ganache_evm_mine: web3.ganache.evm_mine,
   ganache_evm_increaseTime: web3.ganache.evm_increaseTime,
 };
-
-
-
-
-
-
-
-

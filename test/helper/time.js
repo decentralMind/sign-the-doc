@@ -3,7 +3,7 @@ const { ganache_evm_mine,  ganache_evm_increaseTime } = require('./ganacheRPC');
 const { BN  } = require('./setup');
 
 function advanceBlock() {
-  ganache_evm_mine()
+  ganache_evm_mine();
 }
 
 // Returns the time of the last mined block in seconds

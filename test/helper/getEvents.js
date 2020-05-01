@@ -66,4 +66,4 @@ function isBoolean(object) {
 
 module.exports = {
   eventExist: eventExist
-}
+};

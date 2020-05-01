@@ -1,5 +1,5 @@
-const { should } = require('../setup')
-const { customThrow, assertFailure, internalFailWithMsg } = require('../failureUtils')
+const { should } = require('../setup');
+const { customThrow, assertFailure, internalFailWithMsg } = require('../failureUtils');
 
 describe('interFailWithMsg', async function() {
   beforeEach(function() {

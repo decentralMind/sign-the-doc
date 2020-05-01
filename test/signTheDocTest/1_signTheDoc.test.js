@@ -30,7 +30,7 @@ contract('SignTheDoc', function ([accOne, accTwo, accThree, accFour]) {
         depData.r,
         depData.s,
         depData.v);
-    }
+    };
   });
 
   describe('CreateDocToSign', function () {
@@ -79,7 +79,7 @@ contract('SignTheDoc', function ([accOne, accTwo, accThree, accFour]) {
       beforeEach(async function () {
         this.mockExpiryDate = this.latestBlockTime.sub(new BN(10));
         this.mockAccount = await web3.eth.getCoinbase();
-        this.mockHash = web3.utils.sha3('yabadabadoooo')
+        this.mockHash = web3.utils.sha3('yabadabadoooo');
       });
 
       context('incorrect expiry date', function () {
@@ -116,9 +116,9 @@ contract('SignTheDoc', function ([accOne, accTwo, accThree, accFour]) {
 
     describe('verifySignature', function () {
       beforeEach(async function () {
-        this.mockHash = web3.utils.sha3('yabadabadoooo')
-        this.mockData = await getSignData(this.mockHash, accTwo)
-        this.errorMsg = "Signature verification failed"
+        this.mockHash = web3.utils.sha3('yabadabadoooo');
+        this.mockData = await getSignData(this.mockHash, accTwo);
+        this.errorMsg = "Signature verification failed";
       });
 
       it('throws an error for incorrect hash', async function () {

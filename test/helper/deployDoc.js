@@ -2,7 +2,7 @@
 const { BN } = require('./setup');
 
 function deployDoc(modify, value, expiryDate, signData, authorisedSignerList) {
-  var expiryDate = expiryDate
+  var expiryDate = expiryDate;
   var signature = signData.signature;
   var authorisedSignerList = authorisedSignerList;
   var docHash = signData.docHash;
@@ -45,10 +45,10 @@ function deployDoc(modify, value, expiryDate, signData, authorisedSignerList) {
         break;
 
       default:
-        throw new Error(`Could not find any variable named ${modify}`)
+        throw new Error(`Could not find any variable named ${modify}`);
     }
   }
-  
+
   return {
     expiryDate: expiryDate,
     signature: signature,
@@ -57,7 +57,7 @@ function deployDoc(modify, value, expiryDate, signData, authorisedSignerList) {
     r: r,
     s: s,
     v: v
-  }
+  };
 }
 
 module.exports = deployDoc;
