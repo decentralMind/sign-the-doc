@@ -7,4 +7,3 @@ client/package-lock.json
 *.tgz
 .npm/
 .env
-.jshintrc
