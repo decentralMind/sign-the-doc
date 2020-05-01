@@ -14,7 +14,7 @@ contract('SignTheDoc', function ([accOne, accTwo, accThree, accFour, accFive]) {
     this.std = await SignTheDoc.new({
       from: this.creatorAccount
     });
-    this.MainMsg = 'hello world!'
+    this.MainMsg = 'hello world!';
     this.signData = await getSignData(this.MainMsg, this.creatorAccount);
     this.latestBlockTime = await latest();
     this.expiryDate = this.latestBlockTime.add(duration.days(1));
@@ -37,7 +37,7 @@ contract('SignTheDoc', function ([accOne, accTwo, accThree, accFour, accFive]) {
         depData.v, {
           from: this.creatorAccount
         });
-    }
+    };
 
     //Sign the deployed document
     //Allows to pass mock value while signing the document.
@@ -57,12 +57,12 @@ contract('SignTheDoc', function ([accOne, accTwo, accThree, accFour, accFive]) {
           from: signerAccount
         }
       );
-    }
+    };
   });
 
   describe('signTheDoc', function () {
     beforeEach(async function () {
-      this.signerMsg = 'hello world!'
+      this.signerMsg = 'hello world!';
       await this.deploy();
     });
 
@@ -183,7 +183,7 @@ contract('SignTheDoc', function ([accOne, accTwo, accThree, accFour, accFive]) {
           this.tolSec = new BN(1);
           this.start = await time.latest();
           this.end = this.start.add(time.duration.days(2));
-          await time.increaseTo(this.end)
+          await time.increaseTo(this.end);
           this.signData = await getSignData(this.MainMsg, accTwo);
         });
 
