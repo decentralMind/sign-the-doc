@@ -14,7 +14,7 @@ Project live at: https://decentralmind.github.io/signthedoc
 
 ## update:-
 From now on only solidity files and it's helper javascript files will be updated. Please avoid the Reactjs code, it's complicated
-and horrible as I was just experimenting with Reactjs. I want to solely focus on solidity now. May be in future I'll learn Vue.js and built the simple front UI which is not overly complicated like this one. However Solidity code is fine and will be updated on regular basis. I'll soon deploy it on Main Ethereum Network.
+and horrible as I was just experimenting with Reactjs. I want to solely focus on solidity now. May be in future I'll learn Vue.js and design the simple front UI which is not overly complicated like this one. However Solidity code is fine and will be updated on regular basis. I'll soon deploy it on Main Ethereum Network.
 ___
 
 ## INSTALLATION GUIDE
@@ -113,7 +113,7 @@ truffle compile && truffle migrate --network ropsten
 ```
 
 ### 10.Run test.
-cd into root project directory and run test.
+Go into root project directory and run test.
 
 ```sh
 cd sign-the-doc
@@ -123,7 +123,7 @@ truffle test
 If everything is alright, all test should pass.
 
 ### 11.Run the App.
-cd into root project directory.
+Go into root project directory.
 
 ```sh
 cd sign-the-doc
