@@ -64,13 +64,6 @@ contract SignTheDoc {
   }
 
   /**
-   * @dev Returns true if sender is allowed to sign the document.
-   */
-  function isAuthorised(bytes32 docHash) public view returns (bool) {
-    return (docData[docHash].authorisedToSign[msg.sender]);
-  }
-
-  /**
    * @dev Checks following multiple validations:-
    * - Checks if supplied document hash `signerDocHash` is correct and already deployed.
    * - Checks if document `creator` address is correct with provided one.
@@ -234,6 +227,13 @@ contract SignTheDoc {
     doc.whoSigned.push(msg.sender);
     doc.signedOrNot[msg.sender] = true;
     return true;
+  }
+
+  /**
+   * @dev Returns true if sender is allowed to sign the document.
+   */
+  function isAuthorised(bytes32 docHash) public view returns (bool) {
+    return (docData[docHash].authorisedToSign[msg.sender]);
   }
 
   /**
