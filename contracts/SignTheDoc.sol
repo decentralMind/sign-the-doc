@@ -29,14 +29,14 @@ contract SignTheDoc {
   }
 
   // Hash of the data is linked to Creator Struct.
-  mapping(bytes32 => Creator) docData;
+  mapping(bytes32 => Creator) private _docData;
 
   /**
    * @dev Modifier to check if document already deployed.
    */
   modifier isDocHashUnique(bytes32 docHash) {
     require(
-      docData[docHash].docHash == bytes32(0),
+      _docData[docHash].docHash == bytes32(0),
       'Hash must be unique.'
     );
     _;
@@ -74,7 +74,7 @@ contract SignTheDoc {
    * Returns true if all validation passed.
    */
   function _multipleValidations(address creator, bytes32 signerDocHash) private view returns(bool) {
-    Creator memory doc = docData[signerDocHash];
+    Creator memory doc = _docData[signerDocHash];
 
     // Checks if supplied document hash is correct and already deployed.
     require(
@@ -96,7 +96,7 @@ contract SignTheDoc {
 
     // Checks if sender has already signed the document. Throws if already signed.
     require(
-      !(docData[signerDocHash].signedOrNot[msg.sender]),
+      !(_docData[signerDocHash].signedOrNot[msg.sender]),
       'Already signed by this account. Multiple signing is not allowed.'
     );
 
@@ -152,7 +152,7 @@ contract SignTheDoc {
     bytes32 docHash
   )
   private returns (bool) {
-    Creator storage creator = docData[docHash];
+    Creator storage creator = _docData[docHash];
 
     creator.creatorAddress = msg.sender;
     creator.creationDate = block.timestamp;
@@ -189,7 +189,7 @@ contract SignTheDoc {
     address[] memory authorisedSigners,
     address[] memory whoSigned
   ) {
-    Creator memory cr = docData[regDocHash];
+    Creator memory cr = _docData[regDocHash];
     return (cr.creatorAddress, cr.creationDate, cr.expiryDate, cr.docHash, cr.signature, cr.authorisedSignerList, cr.whoSigned);
   }
 
@@ -221,7 +221,7 @@ contract SignTheDoc {
   private
   verifySignature(signerDocHash, r, s, v)
   returns (bool) {
-    Creator storage doc = docData[signerDocHash];
+    Creator storage doc = _docData[signerDocHash];
     Signer memory signer = Signer(msg.sender, block.timestamp, signerDocHash, signature);
     doc.signerInfo[msg.sender] = signer;
     doc.whoSigned.push(msg.sender);
@@ -233,7 +233,7 @@ contract SignTheDoc {
    * @dev Returns true if sender is allowed to sign the document.
    */
   function isAuthorised(bytes32 docHash) public view returns (bool) {
-    return (docData[docHash].authorisedToSign[msg.sender]);
+    return (_docData[docHash].authorisedToSign[msg.sender]);
   }
 
   /**
@@ -241,7 +241,7 @@ contract SignTheDoc {
   * Return true if signed and vice-versa.
   */
   function isSigned(bytes32 docHash, address signer) external view returns (bool signed) {
-    return docData[docHash].signedOrNot[signer];
+    return _docData[docHash].signedOrNot[signer];
   }
 
   /**
@@ -259,8 +259,8 @@ contract SignTheDoc {
     bytes memory signature,
     bool signedOrNot) {
 
-    Signer memory si = docData[signerDocHash].signerInfo[signer];
-    bool signed = docData[signerDocHash].signedOrNot[signer];
+    Signer memory si = _docData[signerDocHash].signerInfo[signer];
+    bool signed = _docData[signerDocHash].signedOrNot[signer];
     return (si.signerAddress, si.signedDate, si.docHash, si.signature, signed);
   }
 }
