@@ -1,11 +1,12 @@
 pragma solidity ^ 0.5 .0;
 
 /**
-
-
-
+* @dev Deploy Hash of the document/file  and let anyone or only authorized signers
+* to sign the hash of the document thus completing document signature process.
 */
 contract SignTheDoc {
+
+  // Document data.
   struct Creator {
     address creatorAddress;
     uint256 creationDate;
@@ -19,6 +20,7 @@ contract SignTheDoc {
     mapping(address => bool) signedOrNot;
   }
 
+  // Signer Data.
   struct Signer {
     address signerAddress;
     uint256 signedDate;
