@@ -80,7 +80,7 @@ contract SignTheDoc {
    *
    * Returns true if all validation passed.
    */
-  function multipleValidations(address creator, bytes32 signerDocHash) public view returns(bool) {
+  function _multipleValidations(address creator, bytes32 signerDocHash) private view returns(bool) {
     Creator memory doc = docData[signerDocHash];
 
     // Checks if supplied document hash is correct and already deployed.
@@ -212,7 +212,7 @@ contract SignTheDoc {
    * - Checks if signer has authority to sign the document.
    */
   function signTheDoc(address creator, bytes32 signerDocHash, bytes32 r, bytes32 s, uint8 v, bytes memory signature) public {
-    require(multipleValidations(creator, signerDocHash));
+    require(_multipleValidations(creator, signerDocHash));
     require(_publishSign(signerDocHash, r, s, v, signature));
   }
 
