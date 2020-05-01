@@ -12,6 +12,9 @@ Project live at: https://decentralmind.github.io/signthedoc
 
 * Kovan: [0x4df4c113f15ad7d20642a4cba34071fb3c55c581](https://kovan.etherscan.io/address/0xeba2cef3320c34e7873afa6905e17add8011910f)
 
+## update:-
+From now on only solidity files and it's helper javascript files will be updated. Please avoid the Reactjs code, it's complicated
+and horrible as I was just experimenting with Reactjs. I want to solely focus on solidity now. May be in future I'll learn Vue.js and built the simple front UI which is not overly complicated like this one. However Solidity code is fine and will be updated on regular basis. I'll soon deploy it on Main Ethereum Network.
 ___
 
 ## INSTALLATION GUIDE
