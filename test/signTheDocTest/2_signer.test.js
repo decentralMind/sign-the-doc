@@ -186,12 +186,12 @@ contract('SignTheDoc', function ([accOne, accTwo, accThree, accFour, accFive]) {
           await time.increaseTo(this.end)
           this.signData = await getSignData(this.MainMsg, accTwo);
         });
-  
+
         it('increase time to a time in the future', async function () {
           const now = await time.latest();
           now.should.be.bignumber.closeTo(this.end, this.tolSec);
         });
-  
+
         it('throws and error if document date is already expired', async function () {
           await shouldFail.reverting.withMessage(
             this.signDoc(accTwo, this.signData),
@@ -200,7 +200,7 @@ contract('SignTheDoc', function ([accOne, accTwo, accThree, accFour, accFive]) {
         });
       });//---end tag document signing date ---->
     });//---end tag expiry date ---->
-    
+
     //multiple signing is not allowed
     describe('multiple signing disallowd', async function () {
       beforeEach(async function () {
@@ -211,7 +211,7 @@ contract('SignTheDoc', function ([accOne, accTwo, accThree, accFour, accFive]) {
       it('multiple signing for same document with same account is not allowed.', async function () {
         await shouldFail.reverting.withMessage(
           this.signDoc(accTwo, this.signData),
-          'Already signed by this account.Multiple signing is not allowed.'
+          'Already signed by this account. Multiple signing is not allowed.'
         );
       });
     });//---end tag multiple signing is not allowed ---->
