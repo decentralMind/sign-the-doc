@@ -1,10 +1,10 @@
 
 const { BN } = require('./setup');
 
-function deployDoc(modify, value, expiryDate, signData, authorisedSignerList) {
-  var expiryDate = expiryDate;
+function deployDoc(modify, value, expDate, signData, authSignerList) {
+  var expiryDate = expDate;
   var signature = signData.signature;
-  var authorisedSignerList = authorisedSignerList;
+  var authorisedSignerList = authSignerList;
   var docHash = signData.docHash;
   var r = signData.r;
   var s = signData.s;
