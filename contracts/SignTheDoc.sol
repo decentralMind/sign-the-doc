@@ -122,7 +122,7 @@ contract SignTheDoc {
    * @dev Opens document for signing process by providing document hash `docHash`,
    * `signature`, `authorisedSignerList` and valid ECDSA `signature` and it's data `r`, `s`
    * and `v`.
-   * `recordInitialDoc` method is called for final recording entry.
+   * `_recordInitialDoc` method is called for final recording entry.
    * Requirements:-
    * - Generated document hash `docHash` must be unique.
    * - Must provide valid `expiryDate`.
@@ -142,7 +142,7 @@ contract SignTheDoc {
   isDocHashUnique(docHash)
   isExpired(expiryDate)
   verifySignature(docHash, r, s, v) {
-    require(recordInitialDoc(expiryDate, signature, authorisedSignerList, docHash),
+    require(_recordInitialDoc(expiryDate, signature, authorisedSignerList, docHash),
       'Document creation process failed. Check if the provided data is valid.');
   }
 
@@ -152,13 +152,13 @@ contract SignTheDoc {
    * Check `createDocToSign` method for parameters description.
    * Returns true.
    */
-  function recordInitialDoc(
+  function _recordInitialDoc(
     uint256 expiryDate,
     bytes memory signature,
     address[] memory authorisedSignerList,
     bytes32 docHash
   )
-  internal returns (bool) {
+  private returns (bool) {
     Creator storage creator = docData[docHash];
 
     creator.creatorAddress = msg.sender;
@@ -203,7 +203,7 @@ contract SignTheDoc {
   /**
    * @dev Signer signs the hash `signerDocHash` of the document deployed by the `creator` address.
    * Signer must provide valid ECDSA `signature` with it's data `r`, `s` and v.
-   * Signing the document and recording process is completed through `publishSign` method.
+   * Signing the document and recording process is completed through `_publishSign` method.
    * Requirements:-
    * - Checks if supplied document hash `signerDocHash` is correct and already deployed.
    * - Checks if document `creator` address is correct.
@@ -213,7 +213,7 @@ contract SignTheDoc {
    */
   function signTheDoc(address creator, bytes32 signerDocHash, bytes32 r, bytes32 s, uint8 v, bytes memory signature) public {
     require(multipleValidations(creator, signerDocHash));
-    require(publishSign(signerDocHash, r, s, v, signature));
+    require(_publishSign(signerDocHash, r, s, v, signature));
   }
 
   /**
@@ -224,8 +224,8 @@ contract SignTheDoc {
    *
    * Returns true.
    */
-  function publishSign(bytes32 signerDocHash, bytes32 r, bytes32 s, uint8 v, bytes memory signature)
-  public
+  function _publishSign(bytes32 signerDocHash, bytes32 r, bytes32 s, uint8 v, bytes memory signature)
+  private
   verifySignature(signerDocHash, r, s, v)
   returns (bool) {
     Creator storage doc = docData[signerDocHash];
