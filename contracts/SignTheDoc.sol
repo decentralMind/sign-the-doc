@@ -240,7 +240,7 @@ contract SignTheDoc {
   * @dev Check if deployed document hash `docHash` is already signed by `signer`.
   * Return true if signed and vice-versa.
   */
-  function isSigned(bytes32 docHash, address signer) public view returns (bool signed) {
+  function isSigned(bytes32 docHash, address signer) external view returns (bool signed) {
     return docData[docHash].signedOrNot[signer];
   }
 
