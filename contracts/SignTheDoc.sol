@@ -185,7 +185,7 @@ contract SignTheDoc {
    * provided registered hash of the document `regDocHash`.
    */
   function getDocData(bytes32 regDocHash)
-  public
+  external
   view
   returns (
     address creatorAddress,
